@@ -1,0 +1,13 @@
+flask
+flask-sqlalchemy
+flask-migrate
+flask-restful
+flask-jwt-extended
+flask-cors
+requests
+beautifulsoup4
+python-dotenv
+psycopg2-binary
+pytest
+pytest-cov
+gunicorn
