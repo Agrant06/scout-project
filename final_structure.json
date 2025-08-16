@@ -1,0 +1,98 @@
+{
+  "timestamp": "2025-08-12T22:25:54.299132",
+  "base_path": "D:\\Paginas\\scout_project",
+  "analysis": {
+    "path": "D:\\Paginas\\scout_project",
+    "exists": true,
+    "directories": [
+      {
+        "name": ".git",
+        "path": "D:\\Paginas\\scout_project\\.git",
+        "size": 17744159,
+        "modified": "2025-08-11T22:46:06.362291"
+      },
+      {
+        "name": "1_documentacion_instrucciones",
+        "path": "D:\\Paginas\\scout_project\\1_documentacion_instrucciones",
+        "size": 195003891,
+        "modified": "2025-08-12T22:21:53.438324"
+      },
+      {
+        "name": "backend",
+        "path": "D:\\Paginas\\scout_project\\backend",
+        "size": 572042359,
+        "modified": "2025-08-12T22:25:52.830446"
+      },
+      {
+        "name": "docs",
+        "path": "D:\\Paginas\\scout_project\\docs",
+        "size": 0,
+        "modified": "2025-08-05T16:50:12.537432"
+      },
+      {
+        "name": "frontend",
+        "path": "D:\\Paginas\\scout_project\\frontend",
+        "size": 294998169,
+        "modified": "2025-08-12T22:25:51.489340"
+      },
+      {
+        "name": "scout_venv",
+        "path": "D:\\Paginas\\scout_project\\scout_venv",
+        "size": 67409068,
+        "modified": "2025-08-05T16:20:20.550498"
+      }
+    ],
+    "files": [
+      {
+        "name": ".gitignore",
+        "path": "D:\\Paginas\\scout_project\\.gitignore",
+        "size": 756,
+        "modified": "2025-08-11T22:35:59.745461"
+      },
+      {
+        "name": "setup_git.bat",
+        "path": "D:\\Paginas\\scout_project\\setup_git.bat",
+        "size": 2538,
+        "modified": "2025-08-08T19:17:13.392608"
+      },
+      {
+        "name": "structure_analysis.json",
+        "path": "D:\\Paginas\\scout_project\\structure_analysis.json",
+        "size": 9078,
+        "modified": "2025-08-12T22:25:51.350982"
+      },
+      {
+        "name": "structure_analysis.log",
+        "path": "D:\\Paginas\\scout_project\\structure_analysis.log",
+        "size": 2168,
+        "modified": "2025-08-12T22:25:54.296651"
+      },
+      {
+        "name": "structure_controller.py",
+        "path": "D:\\Paginas\\scout_project\\structure_controller.py",
+        "size": 16927,
+        "modified": "2025-08-12T21:53:41.825979"
+      },
+      {
+        "name": "token_response.json",
+        "path": "D:\\Paginas\\scout_project\\token_response.json",
+        "size": 95037,
+        "modified": "2025-08-08T14:27:47.199576"
+      }
+    ],
+    "total_size": 1147324150
+  },
+  "actions_taken": [
+    "Moved D:\\Paginas\\scout_project\\backend\\frontend\\.env to D:\\Paginas\\scout_project\\frontend\\.env",
+    "Moved D:\\Paginas\\scout_project\\backend\\frontend\\backend to D:\\Paginas\\scout_project\\frontend\\backend",
+    "Moved D:\\Paginas\\scout_project\\backend\\frontend\\development_status.md to D:\\Paginas\\scout_project\\frontend\\development_status.md",
+    "Deleted D:\\Paginas\\scout_project\\backend\\init_db.py",
+    "Deleted D:\\Paginas\\scout_project\\backend\\init_db_fixed.py",
+    "Deleted D:\\Paginas\\scout_project\\backend\\init_db_simple.py",
+    "Deleted D:\\Paginas\\scout_project\\backend\\test_db.py",
+    "Deleted D:\\Paginas\\scout_project\\backend\\fix_structure.py",
+    "Removed empty directory D:\\Paginas\\scout_project\\backend\\backend\\instance",
+    "Removed empty directory D:\\Paginas\\scout_project\\backend\\backend\\migrations",
+    "Removed empty directory D:\\Paginas\\scout_project\\backend\\-p"
+  ]
+}

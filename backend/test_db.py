@@ -1,55 +1,52 @@
 import os
-import sqlite3
+from pathlib import Path
+from sqlalchemy import text
+from dotenv import load_dotenv
 from app import create_app, db
+from app.models.models import User
 
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
+
+# Obtener la ruta absoluta al directorio actual
+current_dir = Path(os.path.dirname(os.path.abspath(__file__)))
+instance_dir = current_dir / "instance"
+db_path = instance_dir / "scout.db"
+
+print(f"Usando base de datos en: {db_path}")
+print(f"La base de datos existe: {db_path.exists()}")
+
+# Verificar que el archivo de base de datos existe
+if not os.path.exists(db_path):
+    print(f"ERROR: El archivo de base de datos no existe en {db_path}")
+    exit(1)
+
+# Crear la aplicación con la configuración correcta
 app = create_app()
 
-# Probar con SQLite directamente
-print("Probando con SQLite directamente...")
-try:
-    # Usar una ruta absoluta para evitar problemas
-    db_path = os.path.abspath('instance/test.db')
-    print(f"Ruta de la base de datos: {db_path}")
-    
-    # Crear conexión directa con sqlite3
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
-    cursor.execute("CREATE TABLE test (id INTEGER PRIMARY KEY, name TEXT)")
-    cursor.execute("INSERT INTO test (name) VALUES ('test')")
-    conn.commit()
-    conn.close()
-    print("SQLite directo: ÉXITO")
-    
-    # Eliminar el archivo de prueba
-    os.remove(db_path)
-    print("Archivo de prueba eliminado")
-    
-except Exception as e:
-    print(f"SQLite directo: ERROR - {e}")
-
-# Probar con SQLAlchemy
-print("\nProbando con SQLAlchemy...")
-try:
-    with app.app_context():
-        # Usar una ruta absoluta
-        app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.abspath('instance/test2.db')}"
-        db.create_all()
-        print("SQLAlchemy: ÉXITO")
+with app.app_context():
+    print('Probando conexión a la base de datos...')
+    try:
+        result = db.session.execute(text('SELECT 1')).fetchone()
+        print(f'Conexión exitosa: {result}')
         
-        # Eliminar el archivo de prueba
-        os.remove(os.path.abspath('instance/test2.db'))
-        print("Archivo de prueba eliminado")
+        print('Probando consulta a tabla users...')
+        users = User.query.all()
+        print(f'Número de usuarios: {len(users)}')
         
-except Exception as e:
-    print(f"SQLAlchemy: ERROR - {e}")
-
-# Probar con base de datos en memoria
-print("\nProbando con base de datos en memoria...")
-try:
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
-    with app.app_context():
-        db.create_all()
-        print("Base de datos en memoria: ÉXITO")
+        if len(users) == 0:
+            print('Creando usuario de prueba...')
+            user = User(username='test', email='test@example.com')
+            user.set_password('test')
+            db.session.add(user)
+            db.session.commit()
+            print('Usuario creado exitosamente')
+        else:
+            print('Usuarios existentes:')
+            for user in users:
+                print(f'  - {user.username} ({user.email})')
         
-except Exception as e:
-    print(f"Base de datos en memoria: ERROR - {e}")
+        print('Prueba completada exitosamente')
+    except Exception as e:
+        print(f'ERROR: {e}')
+        exit(1)

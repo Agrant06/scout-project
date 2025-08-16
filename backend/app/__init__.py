@@ -4,7 +4,6 @@ from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 from config import config
-import os
 
 # Inicializar extensiones
 db = SQLAlchemy()
@@ -14,13 +13,6 @@ jwt = JWTManager()
 def create_app(config_name='default'):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
-    
-    # Asegurar que la ruta de la base de datos sea absoluta
-    if 'sqlite' in app.config['SQLALCHEMY_DATABASE_URI']:
-        db_path = app.config['SQLALCHEMY_DATABASE_URI'].replace('sqlite:///', '')
-        if not os.path.isabs(db_path):
-            db_path = os.path.abspath(db_path)
-            app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
     
     # Inicializar extensiones con la app
     db.init_app(app)

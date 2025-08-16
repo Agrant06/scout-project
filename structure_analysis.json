@@ -1,0 +1,282 @@
+{
+  "timestamp": "2025-08-12T22:24:01.334721",
+  "base_path": "D:\\Paginas\\scout_project",
+  "analysis": {
+    "general": {
+      "path": "D:\\Paginas\\scout_project",
+      "exists": true,
+      "directories": [
+        {
+          "name": ".git",
+          "path": "D:\\Paginas\\scout_project\\.git",
+          "size": 17744159,
+          "modified": "2025-08-11T22:46:06.362291"
+        },
+        {
+          "name": "1_documentacion_instrucciones",
+          "path": "D:\\Paginas\\scout_project\\1_documentacion_instrucciones",
+          "size": 195003891,
+          "modified": "2025-08-12T22:21:53.438324"
+        },
+        {
+          "name": "backend",
+          "path": "D:\\Paginas\\scout_project\\backend",
+          "size": 572062660,
+          "modified": "2025-08-12T19:37:17.714908"
+        },
+        {
+          "name": "docs",
+          "path": "D:\\Paginas\\scout_project\\docs",
+          "size": 0,
+          "modified": "2025-08-05T16:50:12.537432"
+        },
+        {
+          "name": "frontend",
+          "path": "D:\\Paginas\\scout_project\\frontend",
+          "size": 294991306,
+          "modified": "2025-08-06T19:29:26.622809"
+        },
+        {
+          "name": "scout_venv",
+          "path": "D:\\Paginas\\scout_project\\scout_venv",
+          "size": 67409068,
+          "modified": "2025-08-05T16:20:20.550498"
+        }
+      ],
+      "files": [
+        {
+          "name": ".gitignore",
+          "path": "D:\\Paginas\\scout_project\\.gitignore",
+          "size": 756,
+          "modified": "2025-08-11T22:35:59.745461"
+        },
+        {
+          "name": "setup_git.bat",
+          "path": "D:\\Paginas\\scout_project\\setup_git.bat",
+          "size": 2538,
+          "modified": "2025-08-08T19:17:13.392608"
+        },
+        {
+          "name": "structure_analysis.log",
+          "path": "D:\\Paginas\\scout_project\\structure_analysis.log",
+          "size": 70,
+          "modified": "2025-08-12T22:24:01.339748"
+        },
+        {
+          "name": "structure_controller.py",
+          "path": "D:\\Paginas\\scout_project\\structure_controller.py",
+          "size": 16927,
+          "modified": "2025-08-12T21:53:41.825979"
+        },
+        {
+          "name": "token_response.json",
+          "path": "D:\\Paginas\\scout_project\\token_response.json",
+          "size": 95037,
+          "modified": "2025-08-08T14:27:47.199576"
+        }
+      ],
+      "total_size": 1147326412
+    },
+    "backend": {
+      "path": "D:\\Paginas\\scout_project\\backend",
+      "exists": true,
+      "directories": [
+        {
+          "name": "-p",
+          "path": "D:\\Paginas\\scout_project\\backend\\-p",
+          "size": 0,
+          "modified": "2025-08-05T22:25:06.959900"
+        },
+        {
+          "name": "app",
+          "path": "D:\\Paginas\\scout_project\\backend\\app",
+          "size": 199154,
+          "modified": "2025-08-07T18:47:09.286076"
+        },
+        {
+          "name": "backend",
+          "path": "D:\\Paginas\\scout_project\\backend\\backend",
+          "size": 34649,
+          "modified": "2025-08-12T19:39:14.261619"
+        },
+        {
+          "name": "frontend",
+          "path": "D:\\Paginas\\scout_project\\backend\\frontend",
+          "size": 571747857,
+          "modified": "2025-08-11T21:18:10.033751"
+        },
+        {
+          "name": "instance",
+          "path": "D:\\Paginas\\scout_project\\backend\\instance",
+          "size": 36864,
+          "modified": "2025-08-12T19:08:26.425476"
+        },
+        {
+          "name": "migrations",
+          "path": "D:\\Paginas\\scout_project\\backend\\migrations",
+          "size": 25444,
+          "modified": "2025-08-07T22:24:31.866252"
+        },
+        {
+          "name": "tests",
+          "path": "D:\\Paginas\\scout_project\\backend\\tests",
+          "size": 0,
+          "modified": "2025-08-05T16:59:18.335885"
+        },
+        {
+          "name": "__pycache__",
+          "path": "D:\\Paginas\\scout_project\\backend\\__pycache__",
+          "size": 3282,
+          "modified": "2025-08-11T14:16:57.416176"
+        }
+      ],
+      "files": [
+        {
+          "name": ".env",
+          "path": "D:\\Paginas\\scout_project\\backend\\.env",
+          "size": 135,
+          "modified": "2025-08-10T19:06:27.225307"
+        },
+        {
+          "name": "config.py",
+          "path": "D:\\Paginas\\scout_project\\backend\\config.py",
+          "size": 1414,
+          "modified": "2025-08-11T14:16:52.399873"
+        },
+        {
+          "name": "fix_structure.py",
+          "path": "D:\\Paginas\\scout_project\\backend\\fix_structure.py",
+          "size": 6028,
+          "modified": "2025-08-12T19:37:17.836380"
+        },
+        {
+          "name": "init_db.py",
+          "path": "D:\\Paginas\\scout_project\\backend\\init_db.py",
+          "size": 639,
+          "modified": "2025-08-11T14:27:13.269644"
+        },
+        {
+          "name": "init_db_fixed.py",
+          "path": "D:\\Paginas\\scout_project\\backend\\init_db_fixed.py",
+          "size": 1328,
+          "modified": "2025-08-11T17:02:36.762733"
+        },
+        {
+          "name": "init_db_simple.py",
+          "path": "D:\\Paginas\\scout_project\\backend\\init_db_simple.py",
+          "size": 3729,
+          "modified": "2025-08-12T19:08:56.232312"
+        },
+        {
+          "name": "requirements.txt",
+          "path": "D:\\Paginas\\scout_project\\backend\\requirements.txt",
+          "size": 173,
+          "modified": "2025-08-07T18:57:58.232712"
+        },
+        {
+          "name": "run.py",
+          "path": "D:\\Paginas\\scout_project\\backend\\run.py",
+          "size": 250,
+          "modified": "2025-08-07T18:52:44.495466"
+        },
+        {
+          "name": "test_db.py",
+          "path": "D:\\Paginas\\scout_project\\backend\\test_db.py",
+          "size": 1714,
+          "modified": "2025-08-11T16:57:29.064491"
+        }
+      ],
+      "total_size": 572062660
+    },
+    "frontend": {
+      "path": "D:\\Paginas\\scout_project\\frontend",
+      "exists": true,
+      "directories": [
+        {
+          "name": "node_modules",
+          "path": "D:\\Paginas\\scout_project\\frontend\\node_modules",
+          "size": 294284268,
+          "modified": "2025-08-11T22:48:13.216133"
+        },
+        {
+          "name": "public",
+          "path": "D:\\Paginas\\scout_project\\frontend\\public",
+          "size": 532,
+          "modified": "2025-08-06T19:29:26.651779"
+        },
+        {
+          "name": "src",
+          "path": "D:\\Paginas\\scout_project\\frontend\\src",
+          "size": 2778,
+          "modified": "2025-08-06T19:38:30.994586"
+        }
+      ],
+      "files": [
+        {
+          "name": "package-lock.json",
+          "path": "D:\\Paginas\\scout_project\\frontend\\package-lock.json",
+          "size": 702886,
+          "modified": "2025-08-11T22:48:13.865932"
+        },
+        {
+          "name": "package.json",
+          "path": "D:\\Paginas\\scout_project\\frontend\\package.json",
+          "size": 842,
+          "modified": "2025-08-06T18:19:48.403217"
+        }
+      ],
+      "total_size": 294991306
+    }
+  },
+  "anomalies": [
+    {
+      "type": "unnecessary_file",
+      "path": "D:\\Paginas\\scout_project\\backend\\init_db.py",
+      "description": "Archivo innecesario en backend: init_db.py",
+      "severity": "low"
+    },
+    {
+      "type": "unnecessary_file",
+      "path": "D:\\Paginas\\scout_project\\backend\\init_db_fixed.py",
+      "description": "Archivo innecesario en backend: init_db_fixed.py",
+      "severity": "low"
+    },
+    {
+      "type": "unnecessary_file",
+      "path": "D:\\Paginas\\scout_project\\backend\\init_db_simple.py",
+      "description": "Archivo innecesario en backend: init_db_simple.py",
+      "severity": "low"
+    },
+    {
+      "type": "unnecessary_file",
+      "path": "D:\\Paginas\\scout_project\\backend\\test_db.py",
+      "description": "Archivo innecesario en backend: test_db.py",
+      "severity": "low"
+    },
+    {
+      "type": "unnecessary_file",
+      "path": "D:\\Paginas\\scout_project\\backend\\fix_structure.py",
+      "description": "Archivo innecesario en backend: fix_structure.py",
+      "severity": "low"
+    },
+    {
+      "type": "unexpected_directory",
+      "path": "D:\\Paginas\\scout_project\\backend\\frontend",
+      "description": "Directorio inesperado en backend: frontend",
+      "severity": "high"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "backend_cleanup",
+      "description": "Limpiar estructura de backend eliminando archivos innecesarios y moviendo carpetas incorrectas",
+      "priority": "high"
+    },
+    {
+      "type": "remove_unnecessary",
+      "description": "Eliminar archivos innecesarios",
+      "priority": "medium"
+    }
+  ],
+  "actions_taken": []
+}
