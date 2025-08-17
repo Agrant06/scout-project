@@ -18,7 +18,7 @@ def create_app(config_name='default'):
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
-    CORS(app)
+    CORS(app, resources={r"/*": {"origins": ["http://localhost:3000"]}})
     
     # Registrar blueprints
     from app.routes.auth import auth_bp

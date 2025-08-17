@@ -1,25 +1,87 @@
-import React from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { AppBar, Toolbar, Typography, Container, Box, Paper } from '@mui/material';
+import axios from 'axios';
+import DealershipsList from './DealershipsList';
+import CreateDealership from './CreateDealership';
+
+// Crear tema
+const theme = createTheme();
 
 function App() {
-  return (
-    <div className="app">
-      <nav className="navbar">
-        <div className="nav-brand">
-          <h1>Scout</h1>
-          <span className="nav-subtitle">Análisis Digital de Negocios</span>
-        </div>
-        <div className="nav-links">
-          <a href="#/login">Iniciar Sesión</a>
-        </div>
-      </nav>
+  const [backendStatus, setBackendStatus] = useState('Checking...');
+  const [authStatus, setAuthStatus] = useState('Not tested');
 
-      <main className="main-content">
-        <h2>Bienvenido a Scout</h2>
-        <p>Plataforma para analizar y mejorar la presencia digital de negocios</p>
-        <p>El frontend está funcionando correctamente.</p>
-      </main>
-    </div>
+  useEffect(() => {
+    // Probar conexión con el backend
+    axios.get('http://localhost:5001/')
+      .then(response => {
+        setBackendStatus('Connected');
+        console.log('Backend response:', response.data);
+      })
+      .catch(error => {
+        setBackendStatus('Error');
+        console.error('Backend connection error:', error);
+      });
+
+    // Probar autenticación
+    const testAuth = async () => {
+      try {
+        const response = await axios.post('http://localhost:5001/api/auth/login', {
+          username: 'test',
+          password: 'test'
+        });
+        setAuthStatus('Authenticated');
+        console.log('Auth response:', response.data);
+      } catch (error) {
+        setAuthStatus('Failed');
+        console.error('Auth error:', error);
+      }
+    };
+
+    testAuth();
+  }, []);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                Scout Project
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Paper elevation={3} sx={{ p: 3 }}>
+              <Typography variant="h4" gutterBottom>
+                Scout Dashboard
+              </Typography>
+              
+              <Box sx={{ mt: 3 }}>
+                <Typography variant="h6" gutterBottom>
+                  System Status
+                </Typography>
+                <Paper elevation={1} sx={{ p: 2, mb: 2 }}>
+                  <Typography variant="body1">
+                    Backend Status: {backendStatus}
+                  </Typography>
+                </Paper>
+                <Paper elevation={1} sx={{ p: 2 }}>
+                  <Typography variant="body1">
+                    Authentication Status: {authStatus}
+                  </Typography>
+                </Paper>
+              </Box>
+            </Paper>
+          </Container>
+        </Box>
+      </Router>
+    </ThemeProvider>
   );
 }
 
