@@ -2,17 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { AppBar, Toolbar, Typography, Container, Box, Paper } from '@mui/material';
+import { AppBar, Toolbar, Typography, Container, Box, Paper, Tabs, Tab } from '@mui/material';
 import axios from 'axios';
-import DealershipsList from './DealershipsList';
-import CreateDealership from './CreateDealership';
+import DealershipsList from './components/DealershipsList';
+import CreateDealership from './components/CreateDealership';
 
 // Crear tema
 const theme = createTheme();
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
+
 function App() {
   const [backendStatus, setBackendStatus] = useState('Checking...');
   const [authStatus, setAuthStatus] = useState('Not tested');
+  const [tabValue, setTabValue] = useState(0);
 
   useEffect(() => {
     // Probar conexión con el backend
@@ -44,6 +60,10 @@ function App() {
     testAuth();
   }, []);
 
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -71,11 +91,24 @@ function App() {
                     Backend Status: {backendStatus}
                   </Typography>
                 </Paper>
-                <Paper elevation={1} sx={{ p: 2 }}>
+                <Paper elevation={1} sx={{ p: 2, mb: 3 }}>
                   <Typography variant="body1">
                     Authentication Status: {authStatus}
                   </Typography>
                 </Paper>
+                
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  <Tabs value={tabValue} onChange={handleTabChange} aria-label="basic tabs example">
+                    <Tab label="Concesionarios" />
+                    <Tab label="Crear Concesionario" />
+                  </Tabs>
+                </Box>
+                <TabPanel value={tabValue} index={0}>
+                  <DealershipsList />
+                </TabPanel>
+                <TabPanel value={tabValue} index={1}>
+                  <CreateDealership />
+                </TabPanel>
               </Box>
             </Paper>
           </Container>
